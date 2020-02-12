@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
+    
 class XiaoJieJieItem extends Component {
     constructor(props){
         super(props);
@@ -14,6 +15,15 @@ class XiaoJieJieItem extends Component {
         console.log('componentWillReceiveProps sub')
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+
+        if (nextProps.contents != this.props.contents)
+        {
+            return true;
+        }
+        return false;
+    }
+    
     componentWillUnmount(){
         console.log('componentWillUnmount sub')
     }
