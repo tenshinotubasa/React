@@ -33,6 +33,7 @@ class XiaoJieJie extends Component {
                 return (
                         /* {向子组件传值} */
                         <XiaoJieJieItem 
+                            // avName="ABC" 可在子组件中设置默认值
                             key={index+item}
                             contents={item}
                             index={index}
