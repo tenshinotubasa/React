@@ -7,6 +7,17 @@ class XiaoJieJieItem extends Component {
         /// this绑定，比使用时绑定更利于后期性能优化
         this.handleClick=this.handleClick.bind(this)
     }
+    
+    componentWillReceiveProps(){
+        // 组件第一次存在于dom中，函数是不会被执行的
+        // 如果已经存在dom中，且被变化，函数才会被执行
+        console.log('componentWillReceiveProps sub')
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount sub')
+    }
+
     render() { 
         return ( 
             <li onClick={this.handleClick}>{this.props.avName}为您服务-{this.props.contents}</li>

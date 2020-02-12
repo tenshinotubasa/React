@@ -11,7 +11,33 @@ class XiaoJieJie extends Component {
         };
     }
 
+    componentWillMount(){
+        console.log('component will mount');        
+    }
+
+    componentDidMount(){
+        console.log('component mounted')
+    }
+
+    shouldComponentUpdate(){
+        console.log('shouldComponentUpdate')
+        return true;
+    }
+
+    componentWillUpdate(){
+        console.log('componentWillUpdate');
+    }
+
+    componentDidUpdate(){
+        console.log('componentDidUpdate');
+    }
+
+    componentWillReceiveProps(){
+        console.log('componentWillReceiveProps')
+    }
+
     render() {
+        console.log('挂载中')
         return (
             // 注释
         <Fragment>
