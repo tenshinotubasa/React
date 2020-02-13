@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import './style.css'
 import XiaoJieJieItem from './XiaoJieJieItem'
+import Axios from "axios";
  
 class XiaoJieJie extends Component {
     constructor(props) {
@@ -17,6 +18,9 @@ class XiaoJieJie extends Component {
 
     componentDidMount(){
         console.log('component mounted')
+        Axios.get('http://rap2api.taobao.org/app/mock/244302/01')
+        .then((res)=>{let data = res.data; console.log('axios 获取数据成功', data.data)})
+        .catch((error)=>{console.log('axios 获取数据失败')});
     }
 
     shouldComponentUpdate(){
