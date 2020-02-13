@@ -3,6 +3,7 @@ import './style.css'
 import XiaoJieJieItem from './XiaoJieJieItem'
 import Axios from "axios";
 import Boss from './Boos'
+import { CSSTransition, TransitionGroup } from "react-transition-group";
  
 class XiaoJieJie extends Component {
     constructor(props) {
@@ -63,18 +64,28 @@ class XiaoJieJie extends Component {
             </div>
 
             <ul ref={(ul)=>{this.ul=ul}}>
-                {this.state.list.map((item, index) => {
-                return (
-                        /* {向子组件传值} */
-                        <XiaoJieJieItem 
-                            // avName="ABC" 可在子组件中设置默认值
-                            key={index+item}
-                            contents={item}
-                            index={index}
-                            deleteItem={this.deleteItem.bind(this)}
-                        />
-                );
-            })}             
+                <TransitionGroup>
+                    {
+                        this.state.list.map((item, index) => {
+                        return (
+                                /* {向子组件传值} */
+                                <CSSTransition
+                                    timeout={2000}
+                                    classNames='boss-text'
+                                    unmountOnExit
+                                >
+                                    <XiaoJieJieItem 
+                                        // avName="ABC" 可在子组件中设置默认值
+                                        key={index+item}
+                                        contents={item}
+                                        index={index}
+                                        deleteItem={this.deleteItem.bind(this)}
+                                    />
+                                </CSSTransition>);
+                        })
+                    }
+                </TransitionGroup>
+                             
             </ul>
             <Boss />
         </Fragment>
