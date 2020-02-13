@@ -1,7 +1,7 @@
 .input{border:3px solid #ae7000;}
 /* .show{opacity: 1; background-color: red; transition: opacity 1.5s ease-in, background-color 1.5s ease-in;}
 .hide{opacity: 0; background-color: blue; transition: opacity 1.5s ease-in, background-color 1.5s ease-in;} */
-.show{animation: show-item 2s ease-in forwards;}
+/* .show{animation: show-item 2s ease-in forwards;}
 .hide{animation: hide-item 2s ease-in forwards;}
 
 @keyframes show-item{
@@ -31,4 +31,12 @@
         opacity: 0;
         color: green;
     }
-}
+} */
+
+.boss-text-enter{opacity: 0;}
+.boss-text-enter-active{opacity:1; transition: opacity 2000ms;}
+.boss-text-enter-done{opacity: 1;}
+.boss-text-exit{opacity: 1;}
+.boss-text-exit-active{opacity:0; transition: opacity 2000ms;}
+.boss-text-exit-done{opacity: 0;}
+
